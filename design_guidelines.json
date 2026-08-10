@@ -1,0 +1,154 @@
+Let me read the design guidelines before building.
+Action: view_file({"path":"/app/design_guidelines.json"})
+Observation: [Showing lines 1-150 of 150 total] /app/design_guidelines.json:
+1|{
+2|  "project_name": "Smart Investment Recommendation System",
+3|  "theme_strategy": {
+4|    "theme_mode": "dark",
+5|    "rationale": "High-end wealth management and power-user fintech applications (e.g., Bloomberg, Mercury) heavily favor dark mode for reduced eye strain and a premium, 'exclusive' feel. We combine ARCHETYPE 5 (Luxury: Midnight Blue, Slate) with ARCHETYPE 1 (Growth: Moss, Bone-white)."
+6|  },
+7|  "typography": {
+8|    "fonts": {
+9|      "landing_headings": "Playfair Display, serif",
+10|      "dashboard_headings": "Manrope, sans-serif",
+11|      "body": "IBM Plex Sans, sans-serif",
+12|      "numbers_currency": "JetBrains Mono, monospace"
+13|    },
+14|    "hierarchy": {
+15|      "h1": "text-5xl sm:text-6xl tracking-tight leading-none font-light",
+16|      "h2": "text-3xl sm:text-4xl tracking-tight",
+17|      "h3": "text-xl sm:text-2xl",
+18|      "body": "text-base leading-relaxed text-slate-300",
+19|      "numbers": "font-mono tracking-tight",
+20|      "labels": "text-xs font-semibold tracking-[0.2em] uppercase text-slate-400"
+21|    },
+22|    "rules": [
+23|      "NEVER use generic Inter/Roboto for headings.",
+24|      "All financial figures (INR, percentages) MUST use the monospace font.",
+25|      "The jump between a heading and its subheading must not exceed 2 Tailwind steps.",
+26|      "Use font-light or font-black for headings; avoid standard 'bold' for a more editorial look."
+27|    ]
+28|  },
+29|  "colors": {
+30|    "backgrounds": {
+31|      "page_bg": "#0A0C10",
+32|      "surface_base": "#12151C",
+33|      "surface_elevated": "#1A1D24"
+34|    },
+35|    "text": {
+36|      "primary": "#F8FAFC",
+37|      "secondary": "#94A3B8",
+38|      "muted": "#64748B"
+39|    },
+40|    "brand_and_accents": {
+41|      "primary": "#3B82F6",
+42|      "primary_hover": "#2563EB",
+43|      "growth_positive": "#10B981",
+44|      "risk_negative": "#EF4444",
+45|      "wealth_gold": "#F59E0B"
+46|    },
+47|    "borders": {
+48|      "default": "rgba(255, 255, 255, 0.08)",
+49|      "focus": "#3B82F6"
+50|    },
+51|    "rules": [
+52|      "FORBIDDEN COLOR: teal green or teal blue (#1B93A4).",
+53|      "Tinted Grey Rule: All greys are tinted slightly with blue (slate/slate-950) to feel alive.",
+54|      "Never use pure transparent backgrounds for headers/dropdowns. Always use bg-slate-900/80 with backdrop-blur-xl.",
+55|      "Ensure text meets APCA standards. Minimum 4.5:1 ratio for normal text."
+56|    ]
+57|  },
+58|  "grids_and_layouts": {
+59|    "spacing_system": "Generous Spacing Philosophy. Use p-6, p-8, p-12 for containers.",
+60|    "landing_page": {
+61|      "type": "Mode A: The Tetris Grid",
+62|      "classes": "grid grid-cols-1 md:grid-cols-12 gap-8",
+63|      "rules": "Asymmetry is key. Do not center everything. Use overlapping elements and negative space."
+64|    },
+65|    "dashboard": {
+66|      "type": "Mode B: High Density Grid",
+67|      "classes": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+68|      "rules": "Every pixel utilized. Use h-full on children. North-star metric (e.g., Net Worth) always goes top-left."
+69|    },
+70|    "navigation": "Dashboard requires a fixed sidebar (w-64). Landing page requires a sticky glassmorphism header (z-50)."
+71|  },
+72|  "surfaces_and_components": {
+73|    "cards": {
+74|      "style": "Technical/Grid Borders",
+75|      "classes": "bg-[#12151C] border border-white/10 rounded-none md:rounded-lg",
+76|      "hover": "hover:border-white/20 transition-colors duration-200"
+77|    },
+78|    "headers": {
+79|      "style": "Glassmorphism",
+80|      "classes": "bg-[#0A0C10]/70 backdrop-blur-xl border-b border-white/10"
+81|    },
+82|    "charts": {
+83|      "library": "recharts",
+84|      "style": "Chart Restraint: Prefer single meaningful trend lines over multiple decorative charts. Use gradient fills under line charts (e.g., emerald to transparent) for wealth simulation."
+85|    },
+86|    "financial_health_score": {
+87|      "type": "Progress Ring / Gauge",
+88|      "visual": "A large, sleek circular gauge (0-100) using SVG. Color shifts based on score (Red -> Yellow -> Green)."
+89|    },
+90|    "onboarding_wizard": {
+91|      "style": "Progressive Disclosure",
+92|      "layout": "Minimalist centered forms with a top progress bar. One question per screen for premium feel."
+93|    }
+94|  },
+95|  "motion_and_interactions": {
+96|    "hover_states": "All interactive elements MUST have visible hover states (e.g., button bg shifts, borders lighten).",
+97|    "transitions": "Use specific transitions: `transition: transform 0.2s ease, opacity 0.2s ease`. NEVER use `transition: all`.",
+98|    "loading": "Use skeletal loading for charts and data blocks rather than generic spinners."
+99|  },
+100|  "media_and_images": {
+101|    "image_urls": [
+102|      {
+103|        "url": "https://images.unsplash.com/photo-1685375421073-4dae366f8e84?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBpbnZlc3RvciUyMHBvcnRyYWl0fGVufDB8fHx8MTc4NjM3MTQ0M3ww&ixlib=rb-4.1.0&q=85",
+104|        "category": "Avatar / Advisor Profile",
+105|        "description": "Professional man in suit sitting, suitable for AI Assistant avatar or user profile."
+106|      },
+107|      {
+108|        "url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBpbnZlc3RvciUyMHBvcnRyYWl0fGVufDB8fHx8MTc4NjM3MTQ0M3ww&ixlib=rb-4.1.0&q=85",
+109|        "category": "Landing Page Testimonial",
+110|        "description": "Professional investor standing."
+111|      },
+112|      {
+113|        "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHxmaW5hbmNpYWwlMjBncm93dGglMjBncmFwaHxlbnwwfHx8fDE3ODYzNzE0NDN8MA&ixlib=rb-4.1.0&q=85",
+114|        "category": "Dashboard Empty State / Background",
+115|        "description": "Dark screen stock market chart, blends well with dark theme."
+116|      }
+117|    ],
+118|    "icons": {
+119|      "library": "lucide-react",
+120|      "sizing": "Use 16px to 20px (w-4 h-4, w-5 h-5) for UI icons. Do not oversize icons in dashboards."
+121|    }
+122|  },
+123|  "testing": {
+124|    "attributes": "All interactive and key informational elements MUST include a `data-testid` attribute (e.g., `data-testid=\"login-form-submit-button\"`)."
+125|  },
+126|  "instructions_to_main_agent": {
+127|    "routing": "Use React Router for page transitions. Dashboard and Landing should have distinct layout wrappers.",
+128|    "state_management": "Use Zustand or React Context for managing user onboarding state and financial profile.",
+129|    "auth": "Implement JWT mock authentication. Provide a visible 'Login as Demo User' button for easy evaluator access.",
+130|    "charts_implementation": "Use Recharts for the Wealth Simulator, Goal Scenario Charts, and Portfolio Allocation. Ensure charts are responsive via ResponsiveContainer.",
+131|    "ui_library": "Use Shadcn UI (radix-ui) extensively for dropdowns, selects, modals, tabs, and sliders (for What-If analysis). Override default Shadcn styles to match the dark slate/emerald theme.",
+132|    "forms": "Use React Hook Form + Zod for the 5-step onboarding wizard. Avoid standard HTML `<select>` or `<input type=\"date\">`.",
+133|    "currency_formatting": "Always format currency using standard Indian formatting: `new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(value)`."
+134|  },
+135|  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+136|    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+137|    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+138|    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+139|    "Create depth through layered design elements with z-index hierarchy.",
+140|    "Use glass-morphism effects with backdrop filters (12-24px blur) for sticky navs and overlays.",
+141|    "You MUST NOT apply universal transition. Eg: `transition: all`. Always add transitions for specific interactive properties.",
+142|    "You MUST NOT center align the app container. No `.App { text-align: center; }`.",
+143|    "Always use modern button styles like pill-shaped, or sharp buttons with interaction animations & color relevant to the app style.",
+144|    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+145|    "Every interaction needs micro-animations - hover states, transitions, parallax effects.",
+146|    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+147|    "Prioritize using pre-existing components from src/components/ui when applicable.",
+148|    "Use `sonner` for toasts. It is located in `/app/frontend/src/components/ui/sonner.tsx`."
+149|  ]
+150|}
+[End of file]
